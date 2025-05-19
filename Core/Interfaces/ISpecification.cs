@@ -8,7 +8,10 @@ namespace Core.Interfaces
 {
     public interface ISpecification<T>
     {
+        //represents where clause in a db query
         Expression<Func<T, bool>>? Criteria { get; }
+
+        //expressions to define sorting
         Expression<Func<T, object>>? OrderBy { get; }
         Expression<Func<T, object>>? OrderByDescending { get; }
         bool IsDistinct { get; }
